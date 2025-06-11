@@ -43,4 +43,4 @@ Flask-SQLAlchemy==3.1.1
 Flask-Login==0.6.3
 gunicorn==21.2.0
 
-朢湵捩牯≮ഠ
+
