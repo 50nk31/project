@@ -131,7 +131,7 @@ def salary(employee_id):
     total_pay = hours * employee.hourly_rate
     return render_template('salary.html', employee=employee, hours=hours, total_pay=total_pay)
 
-if __name__ == '__main__':
+def init_db():
     with app.app_context():
         db.create_all()
         if not User.query.filter_by(username='admin').first():
@@ -139,4 +139,9 @@ if __name__ == '__main__':
             admin.set_password('admin')
             db.session.add(admin)
             db.session.commit()
+        print("✅ База данных и админ-пользователь готовы.")
+
+init_db()
+
+if __name__ == '__main__':
     app.run(debug=True)
