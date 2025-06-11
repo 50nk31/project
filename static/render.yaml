@@ -1,9 +1,6 @@
 services:
   - type: web
-    name: flask-app
+    name: employee-tracker
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app.app:app"
-    envVars:
-      - key: FLASK_ENV
-        value: production
+    buildCommand: ""
+    startCommand: gunicorn app:app
